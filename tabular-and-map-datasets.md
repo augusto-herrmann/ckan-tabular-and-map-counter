@@ -7,11 +7,11 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.1'
-      jupytext_version: 1.2.0
+      jupytext_version: 1.2.1
   kernelspec:
-    display_name: dados.gov.br API
+    display_name: CKAN API
     language: python
-    name: dadosgovbr
+    name: ckanapi
 ---
 
 # Counting tabular and map datasets in CKAN
@@ -295,7 +295,8 @@ tabular_and_map_datasets = [
     dataset_id
     for dataset_id in dataset_ids
     if set(formats[dataset_id])\
-        .intersection(set(TABULAR_FORMATS))\
+        .intersection(set(TABULAR_FORMATS))
+    and set(formats[dataset_id])\
         .intersection(set(MAP_FORMATS))
 ]
 ```
