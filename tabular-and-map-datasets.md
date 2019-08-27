@@ -20,7 +20,7 @@ jupyter:
 It has come to my attention that some international open data ranking systems,
 specifically, the
 [Open-Useful-Reusable Government Data (OURdata) Index](http://www.oecd.org/gov/digital-government/open-government-data.htm),
-measured by the Organization Economic Co-operation and Development (OECD),
+measured by the Organization for Economic Co-operation and Development (OECD),
 do measure not only how many datasets a given national open government data
 portal has, but also how many of those are tabular and how many are maps.
 
@@ -35,6 +35,23 @@ the user to find, as it is more spread out in the midst of an ocean of other
 datasets that may not be relevant in the context the user is looking for.
 
 
+Similar opinions on the number of datasets as a metric are shared by civil
+society organizations and governments alike, as can be seen in blog posts
+by the
+[Sunlight Foundation](https://sunlightfoundation.com/2019/08/13/measuring-the-impact-of-community-engagement-around-open-data/)
+and [DataSF](https://datasf.org/blog/how-to-measure-open-data/),
+the open data portal of the City of San Francisco.
+
+
+> * **It incents the wrong behavior.** If we publish every year as a different dataset, our N goes up but data usability goes down. If we publish low value data, our N goes up but no one wants to use it. While it’s important to track - # of datasets shouldn’t be a key performance indicator (KPI).
+> * **It diverts focus from quality.** Publishing to increase your N distracts from ensuring high quality publishing - data that is documented, updated regularly and of value.
+
+As a matter of fact, other established international open data rankings, the
+[Open Data Index](https://index.okfn.org/),
+[Open Data Barometer](https://opendatabarometer.org/) and
+[Open Data Inventory](http://odin.opendatawatch.com/) do not measure the
+quantity of datasets.
+
 ## What is a dataset?
 
 
@@ -43,30 +60,43 @@ According to W3C's Data on the Web Best Practices Recommendation, a [dataset](ht
 > defined as a collection of data, published or curated by a single agent, and available for access or download in one or more formats. A dataset does not have to be available as a downloadable file.
 
 
-CKAN, the open data catalog software most often used around the globe, also
-operates with the notion of a [dataset](https://docs.ckan.org/en/2.8/user-guide.html#datasets-and-resources).
-It further divides datasets into resources, according to several criteria,
-such as temporal slices, interrelated tables, regional or departmental
-divisions, etc. Resources may also be made available in many different
-formats.
+[CKAN](https://ckan.org/), the open data catalog software most often used
+around the globe, also operates with the notion of a
+[dataset](https://docs.ckan.org/en/2.8/user-guide.html#datasets-and-resources).
+It further divides datasets into resources, which can follow several possible
+criteria, such as temporal slices, interrelated tables, regional or
+departmental divisions, etc. Resources may also be made available in many
+different formats.
 
 From CKAN's documentation:
 
-> A dataset is a parcel of data - for example, it could be the crime statistics for a region, the spending figures for a government department, or temperature readings from various weather stations. When users search for data, the search results they see will be individual datasets.
+> A dataset is a parcel of data - for example, it could be the crime
+> statistics for a region, the spending figures for a government department,
+> or temperature readings from various weather stations. When users search
+> for data, the search results they see will be individual datasets.
 > 
 > A dataset contains two things:
 > 
-> * Information or “metadata” about the data. For example, the title and publisher, date, what formats it is available in, what license it is released under, etc.
-> * A number of “resources”, which hold the data itself. CKAN does not mind what format the data is in. A resource can be a CSV or Excel spreadsheet, XML file, PDF document, image file, linked data in RDF format, etc. CKAN can store the resource internally, or store it simply as a link, the resource itself being elsewhere on the web. A dataset can contain any number of resources. For example, different resources might contain the data for different years, or they might contain the same data in different formats.
+> * Information or “metadata” about the data. For example, the title and
+>   publisher, date, what formats it is available in, what license it is
+>   released under, etc.
+> * A number of “resources”, which hold the data itself. CKAN does not mind
+>   what format the data is in. A resource can be a CSV or Excel spreadsheet,
+>   XML file, PDF document, image file, linked data in RDF format, etc. CKAN
+>   can store the resource internally, or store it simply as a link, the
+>   resource itself being elsewhere on the web. A dataset can contain any
+>   number of resources. For example, different resources might contain the
+>   data for different years, or they might contain the same data in different
+>   formats.
 
 
 
-From that we conclude that datasets may contain tabular data, map data,
+From that we can infer that datasets may contain tabular data, map data,
 both or none of those.
 
 
 Counting how many tabular and how many map datasets are there in a given
-CKAN presents some challenges:
+CKAN instance presents some challenges:
 
 * they are not disjuct sets, i.e., there may be datasets that have some
   tabular resources and some maps in the same dataset
@@ -277,7 +307,7 @@ len(tabular_and_map_datasets)
 ## Conclusion
 
 
-However useful the metric should be, it is indeed possible to count tabular
+However useful the metric would be, it is indeed possible to count tabular
 and map datasets in CKAN. Even though it isn't a readily available metric,
 it can be counted with relative ease (albeit a little slowly if you have
 many datasets), by using the CKAN API.
