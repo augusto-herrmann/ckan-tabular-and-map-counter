@@ -21,8 +21,8 @@ Inside the environment, install `ipykernel` and the new environment inside
 Jupyter.
 
 ```
-pip install ipykernel
-python -m ipykernel install --user --name=ckanapi --display-name="CKAN API"
+$ pip install ipykernel
+$ python -m ipykernel install --user --name=ckanapi --display-name="CKAN API"
 ```
 
 Now install the requirements for this specific notebook inside the new
@@ -32,8 +32,17 @@ environment. In particular, we use just `ckanapi`, a
 [tqdm](https://github.com/tqdm/tqdm) to display a nice progress bar.
 
 ```
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
+
+Finally, to generate back the `.ipynb` file, use the command
+
+```
+$ jupytext --sync tabular-and-map-datasets.md 
+```
+
+Remember to put a rule in the `.gitignore` file to exclute `.ipynb` files, if
+you want notebooks to keep playing nice with Git diffs.
 
 Now you can just open the Jupyter Notebook provided and run it. Adjust the
 parameters for your CKAN instance and enjoy!
