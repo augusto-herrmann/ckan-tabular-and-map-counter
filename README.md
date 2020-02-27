@@ -1,5 +1,6 @@
 How to count tabular and map datasets in a CKAN instance using the API, as a
-Jupyter Notebook.
+Jupyter Notebook. For more information, please see the
+[blog post](https://herrmann.tech/en/blog/2019/08/27/counting-tabular-and-map-datasets-in-ckan.html).
 
 ## Quick start
 
